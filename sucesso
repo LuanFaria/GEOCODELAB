@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mensagem Enviada | GEOCODLAB</title>
+  <style>
+    * { box-sizing: border-box; }
+    html,body { height: 100%; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f4f4f4; color:#333; }
+    .wrap {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: linear-gradient(to right, #0f2d3f, #195c4d);
+      color: #fff;
+      padding: 36px 20px;
+      text-align: center;
+    }
+    header h1 { margin: 0; font-size: 2rem; letter-spacing: .5px; }
+    header p { margin: 6px 0 0; opacity: .95; }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      max-width: 720px;
+      width: 100%;
+      border-radius: 12px;
+      padding: 34px;
+      box-shadow: 0 10px 30px rgba(16,30,40,0.08);
+      text-align: center;
+    }
+
+    .icon {
+      width: 96px;
+      height: 96px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg,#1db085,#0f9a76);
+      margin-bottom: 18px;
+      box-shadow: 0 8px 18px rgba(15,45,63,0.12);
+      transform: translateY(0);
+      animation: pop .6s ease;
+    }
+    @keyframes pop {
+      from { transform: translateY(8px) scale(.98); opacity:0; }
+      to   { transform: translateY(0) scale(1); opacity:1; }
+    }
+
+    h2 { color:#0f2d3f; margin: 6px 0 8px; font-size:1.6rem; }
+    p.lead { margin: 0 0 18px; color: #566; line-height:1.5; }
+
+    .details {
+      background: #f7faf8;
+      border: 1px solid #e6f0ec;
+      padding: 12px 14px;
+      border-radius: 8px;
+      color: #406b60;
+      display: inline-block;
+      margin-bottom: 18px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: #ff9800;
+      color: #fff;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #0f2d3f;
+      border: 1px solid rgba(15,45,63,0.12);
+    }
+
+    footer {
+      background: #0f2d3f;
+      color: white;
+      text-align: center;
+      padding: 18px 14px;
+      margin-top: 28px;
+      font-size: 0.9rem;
+    }
+    footer a { color: #ffb86b; text-decoration: none; }
+
+    @media (max-width:520px) {
+      .card { padding: 20px; }
+      header { padding: 26px 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>GEOCODLAB</h1>
+      <p>Obrigado por entrar em contato — vamos responder em breve</p>
+    </header>
+
+    <main>
+      <div class="card" role="main" aria-live="polite">
+        <div class="icon" aria-hidden="true">
+          <!-- check SVG -->
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <h2>Mensagem enviada com sucesso!</h2>
+        <p class="lead">Recebemos sua mensagem. Nossa equipe do GEOCODLAB irá analisar e responder o mais rápido possível.</p>
+
+        <div class="details">Se quiser, envie também um e-mail para <strong>geocodlab@gmail.com</strong> ou nos chame pelo Instagram <strong>@geocodlab</strong>.</div>
+
+        <div class="actions" style="margin-top:16px;">
+          <!-- Ajuste o href para a sua página inicial -->
+          <a class="btn btn-primary" href="/" title="Voltar ao site">Voltar ao site</a>
+          <button class="btn btn-secondary" onclick="window.close(); return false;">Fechar janela</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> GEOCODLAB — Todos os direitos reservados</div>
+    </footer>
+  </
