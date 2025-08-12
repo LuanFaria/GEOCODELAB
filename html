@@ -5,12 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GEOCODLAB | Geoprocessamento e Renda</title>
   <style>
+    /* RESET / BASE */
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f4f4f4;
       color: #333;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
+
+    /* HEADER */
     header {
       background: linear-gradient(to right, #0f2d3f, #195c4d);
       color: #fff;
@@ -20,41 +26,47 @@
     header h1 {
       font-size: 3em;
       margin: 0;
+      letter-spacing: 1px;
     }
     header p {
-      font-size: 1.2em;
+      font-size: 1.1rem;
       margin-top: 10px;
+      opacity: 0.95;
     }
+
+    /* CTA BUTTONS (usadas no header e footer) */
     .cta-buttons {
-      margin-top: 30px;
+      margin-top: 26px;
     }
     .cta-buttons a {
       text-decoration: none;
-      padding: 15px 30px;
-      margin: 10px;
+      padding: 12px 26px;
+      margin: 8px;
       background: #ff9800;
       color: white;
-      font-weight: bold;
+      font-weight: 700;
       border-radius: 6px;
       display: inline-block;
-      transition: 0.3s;
+      transition: opacity .18s ease, transform .12s ease;
     }
     .cta-buttons a.secondary {
       background: #28a745;
     }
-    .cta-buttons a:hover {
-      opacity: 0.85;
-    }
+    .cta-buttons a:hover { opacity: .9; transform: translateY(-2px); }
+
+    /* SECTIONS */
     section {
-      padding: 60px 20px;
+      padding: 48px 20px;
       max-width: 1100px;
       margin: auto;
     }
     section h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
+      font-size: 1.8rem;
+      margin-bottom: 18px;
       color: #0f2d3f;
     }
+
+    /* FLEX LAYOUT (reaproveitado do seu código original) */
     .flex {
       display: flex;
       flex-wrap: wrap;
@@ -66,23 +78,74 @@
     .flex img {
       width: 100%;
       border-radius: 8px;
+      display: block;
     }
+
     blockquote {
       font-style: italic;
-      background: #e3e3e3;
-      padding: 20px;
+      background: #eaeaea;
+      padding: 18px;
       border-left: 5px solid #28a745;
-      margin: 30px 0;
+      margin: 18px 0;
+      border-radius: 6px;
     }
+
+    /* RODAPÉ */
     footer {
       background: #0f2d3f;
       color: white;
       text-align: center;
-      padding: 40px 20px;
+      padding: 36px 20px;
     }
-    footer a {
-      color: #ff9800;
+    footer a { color: #ffb46f; text-decoration: none; }
+
+    /* --- GALERIA - alteração principal solicitada --- */
+    /* A seguir você pode alterar o tamanho das miniaturas mudando o max-width abaixo */
+    .gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    /* Cada item da galeria tem largura fixa (miniatura) */
+    .gallery-item {
+      width: 220px; /* <-- mudar esse valor deixa as imagens maiores/menores (ex: 180px, 250px) */
+      max-width: 100%;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+      display: block;
+    }
+
+    /* Responsividade: em telas pequenas, as miniaturas ficam em 100% do container */
+    @media (max-width: 720px) {
+      header { padding: 40px 14px; }
+      header h1 { font-size: 2rem; }
+      section { padding: 30px 14px; }
+
+      .flex .text, .flex .image { flex: 1 1 100%; }
+      .gallery-item { width: 100%; max-width: 360px; } /* ocupa largura disponível, mas limitada */
+    }
+
+    /* opcional: estilo do botão inline usado nas seções */
+    a.cta {
+      display: inline-block;
       text-decoration: none;
+      background: #ff9800;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      margin-top: 14px;
+    }
+    a.cta.secondary {
+      background: #28a745;
     }
   </style>
 </head>
@@ -91,8 +154,8 @@
     <h1>GEOCODLAB</h1>
     <p>Transforme conhecimento em renda com geotecnologia e QGIS</p>
     <div class="cta-buttons">
-      <a href="https://pay.kiwify.com.br/7QhAguk">Ver eBook</a>
-      <a href="https://pay.kiwify.com.br/7QhAguk" class="secondary">Ver Curso Completo</a>
+      <a href="https://pay.kiwify.com.br/7QhAguk" target="_blank" rel="noopener">Ver eBook</a>
+      <a href="https://pay.kiwify.com.br/7QhAguk" class="secondary" target="_blank" rel="noopener">Ver Curso Completo</a>
     </div>
   </header>
 
@@ -104,7 +167,7 @@
   <section id="ebook">
     <div class="flex">
       <div class="image">
-        <img src="https://drive.google.com/uc?export=view&id=1dHa6fbOuY84ETjziENzu7mDangKdGHa_" alt="eBook Geoprocessamento" />
+        <img src="https://github.com/LuanFaria/GEOCODELAB/blob/main/IMG/capa%20ebook.png?raw=true" alt="eBook Geoprocessamento" />
       </div>
       <div class="text">
         <h2>📘 eBook: Como Ganhar Dinheiro com Geoprocessamento</h2>
@@ -114,7 +177,7 @@
           <li>Ferramentas gratuitas para trabalhar de casa</li>
           <li>Como atrair seus primeiros clientes</li>
         </ul>
-        <a href="https://pay.kiwify.com.br/7QhAguk" class="cta">Quero o eBook</a>
+        <a href="https://pay.kiwify.com.br/7QhAguk" class="cta" target="_blank" rel="noopener">Quero o eBook</a>
       </div>
     </div>
   </section>
@@ -135,17 +198,25 @@
         <a href="#" class="cta secondary">Entrar no Curso</a>
       </div>
       <div class="image">
-        <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe" alt="Curso de QGIS" />
+        <img src="https://github.com/LuanFaria/GEOCODELAB/blob/main/IMG/curso.png?raw=true" alt="Curso de QGIS" />
       </div>
     </div>
   </section>
 
   <section>
     <h2>Galeria</h2>
-    <div class="flex">
-      <img src="https://images.unsplash.com/photo-1581094794329-c8112a89f3e1" alt="Machine Learning" />
-      <img src="https://drive.google.com/uc?export=view&id=1ilnLhEkhx4L7twzj7B2LdtG8G5sPak-C" alt="Campo" />
-      <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1f1" alt="Mapa NDVI" />
+
+    <!-- GALERIA MODIFICADA: as 3 últimas imagens ficam menores -->
+    <div class="gallery" aria-label="Galeria de imagens">
+      <div class="gallery-item">
+        <img src="https://github.com/LuanFaria/GEOCODELAB/blob/main/IMG/PROCESS_IMG.png?raw=true" alt="Machine Learning" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://github.com/LuanFaria/GEOCODELAB/blob/main/IMG/drone.jpeg?raw=true" alt="Campo / Drone" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://github.com/LuanFaria/GEOCODELAB/blob/main/IMG/ndvi.png?raw=true" alt="Mapa NDVI" />
+      </div>
     </div>
   </section>
 
@@ -153,10 +224,10 @@
     <h2>Pronto para transformar seu conhecimento em liberdade financeira?</h2>
     <p>Vamos juntos. Com o apoio certo, qualquer um pode fazer da geotecnologia uma fonte de renda real.</p>
     <div class="cta-buttons">
-      <a href="#">Acessar eBook</a>
+      <a href="https://pay.kiwify.com.br/7QhAguk" target="_blank" rel="noopener">Acessar eBook</a>
       <a href="#" class="secondary">Entrar no Curso</a>
     </div>
-    <p style="margin-top: 30px;">📧 Contato: <a href="mailto:luan@geocodlab.com">luan@geocodlab.com</a></p>
+    <p style="margin-top: 20px;">📧 Contato: <a href="Email:geocodlab@gmail.com">geocodlab@gmail.com</a></p>
   </footer>
 </body>
 </html>
