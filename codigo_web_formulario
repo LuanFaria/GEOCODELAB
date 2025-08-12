@@ -1,0 +1,30 @@
+function doPost(e) {
+  try {
+    // Nome da aba que será usada
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    
+    // Pega a próxima linha disponível
+    var row = sheet.getLastRow() + 1;
+
+    // Validação simples para evitar campos vazios
+    var nome = e.parameter.nome || "";
+    var email = e.parameter.email || "";
+    var mensagem = e.parameter.mensagem || "";
+
+    if (!nome.trim() || !email.trim()) {
+      return HtmlService.createHtmlOutput("<h2>Erro: nome ou e-mail não informado.</h2>");
+    }
+
+    // Grava na planilha
+    sheet.getRange(row, 1).setValue(nome);
+    sheet.getRange(row, 2).setValue(email);
+    sheet.getRange(row, 3).setValue(mensagem);
+    
+
+    // Retorna a página de sucesso
+    return HtmlService.createHtmlOutputFromFile("sucesso");
+
+  } catch (err) {
+    return HtmlService.createHtmlOutput("<h2>Erro ao processar os dados: " + err.message + "</h2>");
+  }
+}
