@@ -142,6 +142,30 @@
       box-shadow: var(--shadow);
       text-align: center;
     }
+     /* Ajustes para telas menores */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+      }
+      .hero-text {
+        flex: unset;
+        min-width: unset;
+      }
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      .hero-text p {
+        font-size: 1rem;
+      }
+      .hero img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        margin-top: 20px;
+      }
+    } 
   </style>
 </head>
 <body>
