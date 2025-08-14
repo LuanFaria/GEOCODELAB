@@ -29,9 +29,12 @@
     }
     /* Hero */
     .hero {
+      width: 100%;
       background: linear-gradient(90deg, var(--brand-dark), var(--brand-teal));
       color: #fff;
       padding: 60px 0;
+    }
+    .hero .container {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -79,6 +82,25 @@
       font-size: 2rem;
       color: var(--accent);
       margin: 5px 0 15px;
+    }
+    .contador {
+      font-size: 1.1rem;
+      color: #c62828;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .bonus-card {
+      background: #fff3e0;
+      padding: 15px;
+      border-radius: var(--radius);
+      margin-top: 15px;
+      font-size: 0.95rem;
+      color: var(--brand-dark);
+      box-shadow: var(--shadow);
+    }
+    .bonus-card span {
+      font-weight: bold;
+      color: var(--accent);
     }
     .btn-comprar {
       display: inline-block;
@@ -142,16 +164,29 @@
       box-shadow: var(--shadow);
       text-align: center;
     }
-     /* Ajustes para telas menores */
+    /* CTA Final */
+    .cta-final {
+      background: var(--brand-teal);
+      color: #fff;
+      padding: 40px 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      margin: 50px auto;
+      max-width: 900px;
+    }
+    .cta-final h2 {
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+    .cta-final p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
     @media (max-width: 768px) {
-      .hero {
+      .hero .container {
         flex-direction: column;
         text-align: center;
-        padding: 40px 20px;
-      }
-      .hero-text {
-        flex: unset;
-        min-width: unset;
       }
       .hero-text h1 {
         font-size: 2rem;
@@ -165,24 +200,31 @@
         object-fit: contain;
         margin-top: 20px;
       }
-    } 
+    }
   </style>
 </head>
 <body>
 
   <!-- Hero -->
-  <section class="hero container">
-    <div class="hero-text">
-      <h1>Curso Completo de QGIS</h1>
-      <p>Do zero à prática profissional — aprenda e aplique de forma simples e lucrativa.</p>
-      <div class="hero-offer">
-        <div class="desconto">🔥 Oferta Especial</div>
-        <span>De R$350</span>
-        <strong>Por apenas R$97</strong>
-        <a class="btn-comprar" href="https://seulinkdecheckout.com">💳 Quero me inscrever agora</a>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-text">
+        <h1>Domine o QGIS</h1>
+        <p>Do zero à prática profissional — aprenda e aplique de forma simples e lucrativa.</p>
+        <div class="hero-offer">
+          
+          <div class="desconto">🔥 Oferta Especial</div>
+          <div class="contador">⏳ Promoção termina em: 02d 14h 32m</div>
+          <span>De R$350</span>
+          
+          <div class="bonus-card">
+             <strong>Por apenas R$97</strong>
+          </div>
+          <a class="btn-comprar" href="https://seulinkdecheckout.com">💳 Quero me inscrever agora</a>
+        </div>
       </div>
+      <img src="https://github.com/LuanFaria/GEOCODELAB/blob/main/IMG/curso.png?raw=true" alt="Mapa e geotecnologia">
     </div>
-    <img src="https://github.com/LuanFaria/GEOCODELAB/blob/main/IMG/curso.png?raw=true" alt="Mapa e geotecnologia">
   </section>
 
   <!-- Benefícios -->
@@ -253,9 +295,11 @@
     <p>Se por qualquer motivo você não ficar satisfeito, solicite o reembolso em até 7 dias e devolveremos 100% do seu investimento.</p>
   </section>
 
-    <!-- CTA Final -->
-  <section class="container" style="text-align:center; margin: 50px 0;">
-    <a class="btn-comprar" href="https://seulinkdecheckout.com">💳 Quero garantir minha vaga por R$97</a>
+  <!-- CTA Final -->
+  <section class="cta-final">
+    <h2>Garanta sua vaga agora!</h2>
+    <p>✅ Curso completo de QGIS | ✅ Acesso vitalício | ✅ Certificado | ✅ Bônus de R$197 incluso</p>
+    <a class="btn-comprar" href="https://seulinkdecheckout.com">💳 Quero começar agora por R$97</a>
   </section>
 
 </body>
